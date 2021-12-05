@@ -1,10 +1,12 @@
 {
   "name": "youtube-dl-downloader-wepback-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A webpack plugin that downloads youtube-dl",
   "files": [
     "dist/"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run build:typescript && npm run build:babel",
     "build:typescript": "tsc",
