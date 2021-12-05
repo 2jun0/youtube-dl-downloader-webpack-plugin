@@ -1,6 +1,6 @@
 {
   "name": "youtube-dl-downloader-wepback-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A webpack plugin that downloads youtube-dl",
   "files": [
     "dist/"
@@ -8,10 +8,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run build:typescript && npm run build:babel",
-    "build:typescript": "tsc",
-    "build:babel": "babel src -d dist --extensions .ts",
-    "prepublishOnly": "npm run build"
+    "build": "npm run build:babel && npm run build:types",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build:babel": "babel src -d dist --extensions .ts --source-maps",
+    "typescript": "tsc",
+    "prepublishOnly": "npm run build && npm run typescript"
   },
   "author": "2jun0 <soo28819@gmail.com>",
   "repository": {
@@ -29,6 +30,7 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.16.0",
+    "@types/node": "^16.11.11",
     "prettier": "^2.5.1",
     "typescript": "^4.5.2",
     "webpack": "^5.64.4"
