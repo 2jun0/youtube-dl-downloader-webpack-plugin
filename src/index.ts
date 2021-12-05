@@ -2,7 +2,37 @@ import { Compiler } from 'webpack';
 import { resolve } from 'path';
 import { downloadFromWebsite, downloadFromGithub } from './core';
 
-export default class YoutudeDlDownloaderWebpackPlugin {
+enum DownloadFrom {
+  Github = 'github',
+  Website = 'website',
+}
+
+interface Options {
+  /**
+   * A platform of youtube-dl (win32 or not)
+   *
+   * default: ['win32', 'linux']
+   */
+  platform?: string[] | string;
+  /**
+   * 'github' or 'website'; server where would like to download
+   *
+   * default: 'website'
+   */
+  from?: DownloadFrom;
+  /**
+   * When {from: 'github'}, a version to download youtube-dl from github releases
+   *
+   * default: [lastest version]
+   */
+  version?: string;
+  /**
+   * A version to download youtube-dl
+   */
+  to: string;
+}
+
+class YoutudeDlDownloaderWebpackPlugin {
   private readonly platform: string | string[];
   private readonly version: string;
   private readonly from: string;
@@ -35,32 +65,4 @@ export default class YoutudeDlDownloaderWebpackPlugin {
   }
 }
 
-enum DownloadFrom {
-  Github = 'github',
-  Website = 'website',
-}
-
-interface Options {
-  /**
-   * A platform of youtube-dl (win32 or not)
-   *
-   * default: ['win32', 'linux']
-   */
-  platform?: string[] | string;
-  /**
-   * 'github' or 'website'; server where would like to download
-   *
-   * default: 'website'
-   */
-  from?: DownloadFrom;
-  /**
-   * When {from: 'github'}, a version to download youtube-dl from github releases
-   *
-   * default: [lastest version]
-   */
-  version?: string;
-  /**
-   * A version to download youtube-dl
-   */
-  to: string;
-}
+export default YoutudeDlDownloaderWebpackPlugin;
