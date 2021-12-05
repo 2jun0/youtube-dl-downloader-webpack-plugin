@@ -43,7 +43,7 @@ function getGithubReleases(page = 1, perPage = 1): Promise<any> {
 
 export async function downloadFromWebsite(dirPath: string, platform: string) {
   const fileName = platform == 'win32' ? 'youtube-dl.exe' : 'youtube-dl';
-  const filePath = dirPath ? `./${fileName}` : resolve(dirPath, fileName);
+  const filePath = dirPath ? resolve(dirPath, fileName) : `./${fileName}`;
   const fileUrl = `https://youtube-dl.org/downloads/latest/${fileName}`;
   return await downloadFile(fileUrl, filePath);
 }
@@ -55,7 +55,7 @@ export async function downloadFromGithub(
 ) {
   const fileName = platform == 'win32' ? 'youtube-dl.exe' : 'youtube-dl';
   if (!version) version = (await getGithubReleases(1, 1))[0].tag_name;
-  const filePath = dirPath ? `./${fileName}` : resolve(dirPath, fileName);
+  const filePath = dirPath ? resolve(dirPath, fileName) : `./${fileName}`;
   const fileURL = `https://github.com/ytdl-org/youtube-dl/releases/download/${version}/${fileName}`;
   return await downloadFile(fileURL, filePath);
 }
