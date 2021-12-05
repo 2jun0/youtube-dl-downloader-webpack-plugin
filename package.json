@@ -1,0 +1,24 @@
+{
+  "name": "youtube-dl-downloader-wepback-plugin",
+  "version": "1.0.0",
+  "description": "A webpack plugin that downloads youtube-dl",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "2jun0 <soo28819@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2jun0/youtube-dl-downloader-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "youtube-dl",
+    "downloader"
+  ],
+  "devDependencies": {
+    "webpack": "^5.64.4"
+  },
+  "license": "MIT"
+}
