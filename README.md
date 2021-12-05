@@ -32,7 +32,7 @@ module.exports = webpackConfig;
 ## Options and Defaults (Optional)
 
 ```js
-new CleanWebpackPlugin({
+new YoutubeDlDownloaderPlugin({
     /**
      * A platform of youtube-dl (win32 or not)
      *
