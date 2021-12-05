@@ -2,12 +2,12 @@ import { Compiler } from 'webpack';
 import { resolve } from 'path';
 import { downloadFromWebsite, downloadFromGithub } from './core';
 
-enum DownloadFrom {
+export enum DownloadFrom {
   Github = 'github',
   Website = 'website',
 }
 
-interface Options {
+export interface Options {
   /**
    * A platform of youtube-dl (win32 or not)
    *
