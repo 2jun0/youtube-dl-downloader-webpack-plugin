@@ -21,7 +21,7 @@ const webpackConfig = {
   plugins: [
     new YoutubeDlDownloaderPlugin({
       from: 'website',
-      to: './lib'
+      to: 'lib'
     })
   ],
 };
