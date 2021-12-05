@@ -49,7 +49,7 @@ declare namespace YoutudeDlDownloaderWebpackPlugin {
      */
     platform?: string[] | string;
     /**
-     * A github, website or releases
+     * 'github' or 'website'; server where would like to download
      *
      * default: 'website'
      */
