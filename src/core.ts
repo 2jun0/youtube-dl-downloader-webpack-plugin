@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { resolve } from 'path';
 import https from 'https';
 import { IncomingMessage } from 'http';
 
@@ -40,21 +41,21 @@ function getGithubReleases(page = 1, perPage = 1): Promise<any> {
   });
 }
 
-export async function downloadFromWebsite(filePath: string, platform: string) {
+export async function downloadFromWebsite(dirPath: string, platform: string) {
   const fileName = platform == 'win32' ? 'youtube-dl.exe' : 'youtube-dl';
-  if (!filePath) filePath = `./${fileName}`;
+  const filePath = dirPath ? `./${fileName}` : resolve(dirPath, fileName);
   const fileUrl = `https://youtube-dl.org/downloads/latest/${fileName}`;
   return await downloadFile(fileUrl, filePath);
 }
 
 export async function downloadFromGithub(
-  filePath: string,
+  dirPath: string,
   version: string,
   platform: string,
 ) {
   const fileName = platform == 'win32' ? 'youtube-dl.exe' : 'youtube-dl';
   if (!version) version = (await getGithubReleases(1, 1))[0].tag_name;
-  if (!filePath) filePath = `./${fileName}`;
-  let fileURL = `https://github.com/ytdl-org/youtube-dl/releases/download/${version}/${fileName}`;
+  const filePath = dirPath ? `./${fileName}` : resolve(dirPath, fileName);
+  const fileURL = `https://github.com/ytdl-org/youtube-dl/releases/download/${version}/${fileName}`;
   return await downloadFile(fileURL, filePath);
 }
