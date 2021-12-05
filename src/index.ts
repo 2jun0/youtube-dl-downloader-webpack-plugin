@@ -32,7 +32,7 @@ interface Options {
   to: string;
 }
 
-class YoutudeDlDownloaderWebpackPlugin {
+export class YoutudeDlDownloaderWebpackPlugin {
   private readonly platform: string | string[];
   private readonly version: string;
   private readonly from: string;
@@ -64,5 +64,3 @@ class YoutudeDlDownloaderWebpackPlugin {
     });
   }
 }
-
-export default YoutudeDlDownloaderWebpackPlugin;
