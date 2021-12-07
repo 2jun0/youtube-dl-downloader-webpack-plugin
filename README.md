@@ -8,6 +8,12 @@
 [mit-license-url]: LICENSE
 [mit-license-image]: https://camo.githubusercontent.com/d59450139b6d354f15a2252a47b457bb2cc43828/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f7365727665726c6573732e737667
 
+A webpack plugin that downloads youtube-dl
+
+## Why
+
+- Auto install the latest or specific `youtube-dl` version available as webpack plugin.
+
 ## Installation
 
 `npm install --save-dev youtube-dl-downloader-wepback-plugin`
@@ -34,9 +40,9 @@ module.exports = webpackConfig;
 ```js
 new YoutubeDlDownloaderPlugin({
     /**
-     * A platform of youtube-dl (win32 or not)
+     * A platform of youtube-dl ('win32', 'auto' or 'not')
      *
-     * default: ['win32', 'linux']
+     * default: ['win32', 'unix']
      */
     platform?: string[] | string;
 

@@ -1,6 +1,7 @@
 import { Compiler } from 'webpack';
 import { resolve } from 'path';
 import { downloadFromWebsite, downloadFromGithub } from './core';
+import os from 'os';
 
 export enum DownloadFrom {
   Github = 'github',
@@ -9,9 +10,9 @@ export enum DownloadFrom {
 
 export interface Options {
   /**
-   * A platform of youtube-dl (win32 or not)
+   * A platform of youtube-dl ('win32', 'auto' or 'not')
    *
-   * default: ['win32', 'linux']
+   * default: ['win32', 'unix']
    */
   platform?: string[] | string;
   /**
@@ -39,7 +40,12 @@ export class YoutudeDlDownloaderWebpackPlugin {
   private readonly to: string;
 
   constructor(options: Options) {
-    this.platform = options.platform || ['win32', 'linux'];
+    if (options.platform === 'auto') {
+      this.platform = os.type() === 'Windows_NT' ? 'win32' : 'unix';
+    } else {
+      this.platform = options.platform || ['win32', 'unix'];
+    }
+
     this.from = options.from || DownloadFrom.Website;
     this.version = options.version || 'lastest';
 
