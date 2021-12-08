@@ -4,7 +4,7 @@
     "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": false,
     "allowJs": false,
     "emitDeclarationOnly": true
