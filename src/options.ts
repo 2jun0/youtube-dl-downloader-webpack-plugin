@@ -1,5 +1,3 @@
-import { Compiler } from 'webpack';
-
 export enum DownloadFrom {
   Github = 'github',
   Website = 'website',
@@ -28,15 +26,4 @@ export interface Options {
    * A version to download youtube-dl
    */
   to: string;
-}
-
-declare module 'youtube-dl-download-webpack-plugin' {
-  export default class YoutudeDlDownloaderWebpackPlugin {
-    private readonly platform;
-    private readonly version;
-    private readonly from;
-    private readonly to;
-    constructor(options: Options);
-    apply(compiler: Compiler): void;
-  }
 }
