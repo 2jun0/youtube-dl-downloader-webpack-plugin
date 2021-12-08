@@ -21,7 +21,7 @@ A webpack plugin that downloads youtube-dl
 ## Usage
 
 ```js
-const { YoutubeDlDownloaderPlugin } = require("youtube-dl-downloader-wepback-plugin");
+const YoutubeDlDownloaderPlugin = require("youtube-dl-downloader-wepback-plugin");
 
 const webpackConfig = {
   plugins: [

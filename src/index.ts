@@ -3,12 +3,12 @@ import { resolve } from 'path';
 import { downloadFromWebsite, downloadFromGithub } from './core';
 import os from 'os';
 
-export enum DownloadFrom {
+enum DownloadFrom {
   Github = 'github',
   Website = 'website',
 }
 
-export interface Options {
+interface Options {
   /**
    * A platform of youtube-dl ('win32', 'auto' or 'not')
    *
@@ -33,7 +33,7 @@ export interface Options {
   to: string;
 }
 
-export class YoutudeDlDownloaderWebpackPlugin {
+export default class YoutudeDlDownloaderWebpackPlugin {
   private readonly platform: string | string[];
   private readonly version: string;
   private readonly from: string;
