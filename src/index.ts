@@ -3,35 +3,7 @@ import { resolve } from 'path';
 import { downloadFromWebsite, downloadFromGithub } from './core';
 import os from 'os';
 
-enum DownloadFrom {
-  Github = 'github',
-  Website = 'website',
-}
-
-interface Options {
-  /**
-   * A platform of youtube-dl ('win32', 'auto' or 'not')
-   *
-   * default: ['win32', 'unix']
-   */
-  platform?: string[] | string;
-  /**
-   * 'github' or 'website'; server where would like to download
-   *
-   * default: 'website'
-   */
-  from?: DownloadFrom;
-  /**
-   * When {from: 'github'}, a version to download youtube-dl from github releases
-   *
-   * default: [lastest version]
-   */
-  version?: string;
-  /**
-   * A version to download youtube-dl
-   */
-  to: string;
-}
+import { DownloadFrom, Options } from '../typings';
 
 export default class YoutudeDlDownloaderWebpackPlugin {
   private readonly platform: string | string[];
