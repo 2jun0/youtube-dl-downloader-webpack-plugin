@@ -1,5 +1,5 @@
 import os from 'os';
-import { Compiler } from 'webpack';
+import { Compiler, DefinePlugin } from 'webpack';
 import { resolve } from 'path';
 import { downloadFromWebsite, downloadFromGithub } from './core';
 import { Options, DownloadFrom } from './options';
@@ -9,6 +9,7 @@ class YoutudeDlDownloaderWebpackPlugin {
   private readonly version: string;
   private readonly from: string;
   private readonly to: string;
+  private readonly enableDefine: boolean;
 
   constructor(options: Options) {
     if (options.platform === 'auto') {
@@ -23,6 +24,7 @@ class YoutudeDlDownloaderWebpackPlugin {
     if (!options.to) throw new Error("Cannot find 'to' option");
 
     this.to = options.to;
+    this.enableDefine = options.enableDefine || false;
   }
 
   apply(compiler: Compiler) {
@@ -39,6 +41,14 @@ class YoutudeDlDownloaderWebpackPlugin {
           break;
       }
     });
+
+    if (this.enableDefine) {
+      new DefinePlugin({
+        YTDLDWP_to: JSON.stringify(this.to),
+        YTDLDWP_platform: JSON.stringify(this.platform),
+        YTDLDWP_version: JSON.stringify(this.version),
+      }).apply(compiler);
+    }
   }
 }
 

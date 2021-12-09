@@ -26,4 +26,10 @@ export interface Options {
    * A version to download youtube-dl
    */
   to: string;
+  /**
+   * use EnableDefine
+   *
+   * default: false
+   */
+  enableDefine?: boolean;
 }

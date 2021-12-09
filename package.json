@@ -1,6 +1,6 @@
 {
   "name": "youtube-dl-downloader-wepback-plugin",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "A webpack plugin that downloads youtube-dl",
   "files": [
     "dist/"
