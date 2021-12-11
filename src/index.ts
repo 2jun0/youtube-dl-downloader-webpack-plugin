@@ -1,5 +1,5 @@
 import os from 'os';
-import { Compiler, DefinePlugin } from 'webpack';
+import { Compiler, EnvironmentPlugin } from 'webpack';
 import { resolve } from 'path';
 import { downloadFromWebsite, downloadFromGithub } from './core';
 import { Options, DownloadFrom } from './options';
@@ -43,10 +43,10 @@ class YoutudeDlDownloaderWebpackPlugin {
     });
 
     if (this.enableDefine) {
-      new DefinePlugin({
-        YTDLDWP_to: JSON.stringify(this.to),
-        YTDLDWP_platform: JSON.stringify(this.platform),
-        YTDLDWP_version: JSON.stringify(this.version),
+      new EnvironmentPlugin({
+        YTDLDWP_to: this.to,
+        YTDLDWP_platform: this.platform,
+        YTDLDWP_version: this.version,
       }).apply(compiler);
     }
   }

@@ -1,3 +1,6 @@
+// The MIT License (MIT)
+// Copyright © 2021 2jun0, ghjbnm
+// This code is modified to the repo https://github.com/ghjbnm/youtube-dl-wrap
 import fs from 'fs';
 import { resolve } from 'path';
 import https from 'https';
