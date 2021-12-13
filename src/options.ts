@@ -9,27 +9,27 @@ export interface Options {
    *
    * default: ['win32', 'unix']
    */
-  platform?: string[] | string;
+  platform?: string[] | string
   /**
    * 'github' or 'website'; server where would like to download
    *
    * default: 'website'
    */
-  from?: DownloadFrom;
+  from?: DownloadFrom
   /**
    * When {from: 'github'}, a version to download youtube-dl from github releases
    *
    * default: [lastest version]
    */
-  version?: string;
+  version?: string
   /**
    * A version to download youtube-dl
    */
-  to: string;
+  to: string
   /**
    * use EnableDefine
    *
    * default: false
    */
-  enableDefine?: boolean;
+  enableDefine?: boolean
 }
