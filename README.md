@@ -3,8 +3,8 @@
 [![npm][npm-image]][npm-url]
 [![MIT License][mit-license-image]][mit-license-url]
 
-[npm-url]: https://www.npmjs.com/package/youtube-dl-downloader-wepback-plugin
-[npm-image]: https://img.shields.io/npm/v/youtube-dl-downloader-wepback-plugin.svg?label=npm%20version
+[npm-url]: https://www.npmjs.com/package/youtube-dl-downloader-webpack-plugin
+[npm-image]: https://img.shields.io/npm/v/youtube-dl-downloader-webpack-plugin.svg?label=npm%20version
 [mit-license-url]: LICENSE
 [mit-license-image]: https://camo.githubusercontent.com/d59450139b6d354f15a2252a47b457bb2cc43828/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f7365727665726c6573732e737667
 
@@ -16,12 +16,12 @@ A webpack plugin that downloads youtube-dl
 
 ## Installation
 
-`npm install --save-dev youtube-dl-downloader-wepback-plugin`
+`npm install --save-dev youtube-dl-downloader-webpack-plugin`
 
 ## Usage
 
 ```js
-const { YoutubeDlDownloaderPlugin } = require("youtube-dl-downloader-wepback-plugin");
+const { YoutubeDlDownloaderPlugin } = require("youtube-dl-downloader-webpack-plugin");
 
 const webpackConfig = {
   plugins: [

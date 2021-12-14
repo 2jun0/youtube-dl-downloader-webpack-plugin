@@ -1,6 +1,6 @@
 {
   "name": "youtube-dl-downloader-webpack-plugin",
-  "version": "1.0.19",
+  "version": "1.1.0",
   "description": "A webpack plugin that downloads youtube-dl",
   "files": [
     "dist/"
@@ -24,7 +24,8 @@
     "webpack",
     "plugin",
     "youtube-dl",
-    "downloader"
+    "downloader",
+    "youtube-dl-webpack"
   ],
   "devDependencies": {
     "@babel/cli": "^7.16.0",
