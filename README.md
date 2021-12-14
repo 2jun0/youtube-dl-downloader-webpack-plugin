@@ -21,11 +21,11 @@ A webpack plugin that downloads youtube-dl
 ## Usage
 
 ```js
-const { YoutubeDlDownloaderPlugin } = require("youtube-dl-downloader-webpack-plugin");
+const { YoutudeDlDownloaderWebpackPlugin } = require("youtube-dl-downloader-webpack-plugin");
 
 const webpackConfig = {
   plugins: [
-    new YoutubeDlDownloaderPlugin({
+    new YoutudeDlDownloaderWebpackPlugin({
       from: 'website',
       to: 'lib'
     })
@@ -38,7 +38,7 @@ module.exports = webpackConfig;
 ## Options and Defaults (Optional)
 
 ```js
-new YoutubeDlDownloaderPlugin({
+new YoutudeDlDownloaderWebpackPlugin({
     /**
      * A platform of youtube-dl ('win32', 'auto' or 'not')
      *
