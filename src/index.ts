@@ -2,7 +2,7 @@ import os from 'os'
 import { Compiler, EnvironmentPlugin } from 'webpack'
 import { resolve } from 'path'
 import { downloadFromWebsite, downloadFromGithub } from './core'
-import { Options, DownloadFrom } from './options'
+import { type Options, DownloadFrom } from './options'
 
 class YoutudeDlDownloaderWebpackPlugin {
   private readonly platform: string | string[]
@@ -52,4 +52,4 @@ class YoutudeDlDownloaderWebpackPlugin {
   }
 }
 
-export type { YoutudeDlDownloaderWebpackPlugin, Options, DownloadFrom }
+export { YoutudeDlDownloaderWebpackPlugin, type Options, DownloadFrom }
