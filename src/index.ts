@@ -1,5 +1,5 @@
 import os from 'os'
-import { Compiler, EnvironmentPlugin } from 'webpack'
+import { Compiler, ProvidePlugin } from 'webpack'
 import { resolve } from 'path'
 import { downloadFromWebsite, downloadFromGithub } from './core'
 import { type Options, DownloadFrom } from './options'
@@ -43,7 +43,7 @@ class YoutudeDlDownloaderWebpackPlugin {
     })
 
     if (this.enableDefine) {
-      new EnvironmentPlugin({
+      new ProvidePlugin({
         YTDLDWP_to: this.to,
         YTDLDWP_platform: this.platform,
         YTDLDWP_version: this.version,
