@@ -24,7 +24,7 @@ class YoutudeDlDownloaderWebpackPlugin {
     if (!options.to) throw new Error("Cannot find 'to' option")
 
     this.to = options.to
-    this.enableDefine = options.enableDefine || false
+    this.enableDefine = options.enableDefine ?? true
   }
 
   apply(compiler: Compiler) {

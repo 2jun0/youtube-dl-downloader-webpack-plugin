@@ -1,6 +1,6 @@
 {
   "name": "youtube-dl-downloader-webpack-plugin",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A webpack plugin that downloads youtube-dl",
   "files": [
     "dist/"
