@@ -1,8 +1,10 @@
 import os from 'os'
-import { Compiler, ProvidePlugin } from 'webpack'
+import { Compiler } from 'webpack'
 import { resolve } from 'path'
 import { downloadFromWebsite, downloadFromGithub } from './core'
 import { type Options, DownloadFrom } from './options'
+
+declare let global: any
 
 class YoutudeDlDownloaderWebpackPlugin {
   private readonly platform: string | string[]
@@ -43,13 +45,11 @@ class YoutudeDlDownloaderWebpackPlugin {
     })
 
     if (this.enableDefine) {
-      new ProvidePlugin({
-        YTDLDWP_to: this.to,
-        YTDLDWP_platform: this.platform,
-        YTDLDWP_version: this.version,
-      }).apply(compiler)
+      global.YTDLDWP_to = this.to
+      global.YTDLDWP_platform = this.platform
+      global.YTDLDWP_version = this.version
     }
   }
 }
 
-export { YoutudeDlDownloaderWebpackPlugin, type Options, DownloadFrom }
+export { YoutudeDlDownloaderWebpackPlugin, Options, DownloadFrom }
