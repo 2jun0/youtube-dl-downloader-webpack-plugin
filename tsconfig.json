@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "declaration": true,
     "declarationMap": true,
-    "typeRoots": ["node_modules/@types", "src/global.d.ts"],
+    "typeRoots": ["node_modules/@types"],
     "outDir": "dist"
   },
   "include": ["src"],

@@ -1,12 +1,11 @@
 {
   "name": "youtube-dl-downloader-webpack-plugin",
-  "version": "1.1.5",
+  "version": "1.1.8",
   "description": "A webpack plugin that downloads youtube-dl",
   "files": [
     "dist/"
   ],
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "lint": "prettier --write .",
